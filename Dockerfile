@@ -9,6 +9,6 @@ RUN make
 FROM scratch AS iperf3
 COPY --from=0 /src/src/iperf3 /iperf3
 ENTRYPOINT ["/iperf3"]
-EXPOSE 5201
+EXPOSE 5201/tcp 5201/udp
 CMD ["-s"]
 
